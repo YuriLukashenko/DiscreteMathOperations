@@ -4,7 +4,7 @@ using ConsoleApp1;
 
 Console.WriteLine("Hello, World!");
 
-var employeesChimera = new List<Employee>()
+var employeesChimera = new List<ChimeraEmployee>()
 {
     new() {Id=1, Name="Yurii Lukashenko"},
     new() {Id=2, Name="Eddie Piers"},
@@ -18,22 +18,21 @@ var employeesChimera = new List<Employee>()
     new() {Id=10, Name="Fabiano Arcadia"},
 };
 
-var employeesHelios = new List<Employee>()
+var employeesHelios = new List<IntranetEmployee>()
 {
-    new() {Id=6, Name="Thandi Fritjof"},
-    new() {Id=7, Name="Shadrach Ivan"},
-    new() {Id=8, Name="Taalay Nkechinyere"},
-    new() {Id=9, Name="Ciriaco Calypso"},
-    new() {Id=10, Name="Fabiano Arcadia"},
-    new() {Id=11, Name="Albaweniz Halle"},
-    new() {Id=12, Name="Gittan Ermis"},
+    new() {TabCisZamId=6, Name="Thandi Fritjof"},
+    new() {TabCisZamId=7, Name="Shadrach Ivan"},
+    new() {TabCisZamId=8, Name="Taalay Nkechinyere"},
+    new() {TabCisZamId=9, Name="Ciriaco Calypso"},
+    new() {TabCisZamId=10, Name="Fabiano Arcadia"},
+    new() {TabCisZamId=11, Name="Albaweniz Halle"},
+    new() {TabCisZamId=12, Name="Gittan Ermis"},
 };
 
-static int EmployeeSelector(Employee employee) => employee.Id;
 
-var employeesExcepted = employeesChimera.ExceptBy(employeesHelios.Select(EmployeeSelector), EmployeeSelector);
+var employeesExcepted = employeesChimera.ExceptBy(employeesHelios.Select(x => x.TabCisZamId), y => y.Id);
 
 foreach (var employee in employeesExcepted)
 {
-    Console.WriteLine($"Id:{employee.Id}, Name: {employee.Name}");
+    Console.WriteLine($"TabCisZamId:{employee.Id}, Name: {employee.Name}");
 }
