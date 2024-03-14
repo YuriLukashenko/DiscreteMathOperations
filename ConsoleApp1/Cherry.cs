@@ -11,5 +11,7 @@ namespace ConsoleApp1
         public string Pick { get; set; }
 
         public int One { get; set; }
+
+        public int Three { get; set; }
     }
 }
