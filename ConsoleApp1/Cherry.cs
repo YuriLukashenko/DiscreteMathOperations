@@ -9,5 +9,7 @@ namespace ConsoleApp1
     public class Cherry
     {
         public string Pick { get; set; }
+
+        public int One { get; set; }
     }
 }
