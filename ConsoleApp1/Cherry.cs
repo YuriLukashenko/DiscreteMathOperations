@@ -13,5 +13,7 @@ namespace ConsoleApp1
         public int One { get; set; }
 
         public int Two { get; set; }
+
+        public int Three { get; set; }
     }
 }
